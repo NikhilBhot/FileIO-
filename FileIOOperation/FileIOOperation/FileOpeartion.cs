@@ -17,14 +17,20 @@ namespace FileIOOperation
             if (File.Exists(path))
             {
                 Console.WriteLine("Yes...! there is File");
+                ReadDataFromFile(path);
             }
             else
             {
                 Console.WriteLine("File Not Fount");
             }
             Console.ReadLine();
+        }
 
-
+        //Read The Data From Text File
+        public static void ReadDataFromFile(string path)
+        {
+            string data=File.ReadAllText(path);
+            Console.WriteLine(data);
         }
     }
 }
