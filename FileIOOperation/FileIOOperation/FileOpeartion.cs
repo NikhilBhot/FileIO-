@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Security.AccessControl;
+
 namespace FileIOOperation
 {
     public class FileOpeartion
@@ -18,6 +20,7 @@ namespace FileIOOperation
             {
                 Console.WriteLine("Yes...! there is File");
                 ReadDataFromFile(path);
+                CopyTextFile(path);
             }
             else
             {
@@ -31,6 +34,13 @@ namespace FileIOOperation
         {
             string data=File.ReadAllText(path);
             Console.WriteLine(data);
+        }
+
+        //Copy Text File
+        public static void CopyTextFile(string path)
+        {
+            string path1= @"D:\\BridgeLabz-RFP260\\Learning\\FileIO-\\FileIOOperation\\FileIOOperation\\Data1.text";
+            File.Copy(path, path1);
         }
     }
 }
